@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qalb — Islamic Dua Jar | Quran, Duas & Hadith for Every Mood</title>
+  <meta name="description" content="Qalb is your free Islamic dua jar — find Quran verses, authentic Hadith, duas, Allah's names and adhkar tailored to your mood. Comfort for sadness, anxiety, guilt, gratitude and more." />
+  <meta name="keywords" content="islamic dua jar, dua for sadness, quran verses for anxiety, islamic duas, dua for forgiveness, quran for depression, hadith bukhari, hadith muslim, islamic mental health, duas for every mood, digital dua jar, asmaul husna, adhkar, dhikr counter" />
+  <meta name="author" content="Qalb" />
+  <link rel="canonical" href="https://qalb-app.github.io/qalb/" />
+  <meta property="og:title" content="Qalb — Islamic Dua Jar | Quran & Duas for Your Mood" />
+  <meta property="og:description" content="Find Quran verses, authentic Hadith and duas tailored to what your heart is going through. Free Islamic dua jar app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qalb-app.github.io/qalb/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Qalb — Islamic Dua Jar",
+    "description": "Find Quran verses, authentic Hadith and duas based on your emotional state.",
+    "url": "https://qalb-app.github.io/qalb/",
+    "applicationCategory": "LifestyleApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+<div class="geo-bg"></div>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <a href="index.html" class="nav-logo">قلب <span>Qalb</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="dhikr.html">Dhikr</a>
+    <a href="names.html">99 Names</a>
+    <a href="share.html">Share Your Heart</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleNav()">🏠 Home</a>
+  <a href="dhikr.html" onclick="toggleNav()">📿 Dhikr Counter</a>
+  <a href="names.html" onclick="toggleNav()">✦ 99 Names of Allah</a>
+  <a href="share.html" onclick="toggleNav()">💌 Share Your Heart</a>
+</div>
+
+<main class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="gold-line"></div>
+    <h1 class="title">Q<em>alb</em></h1>
+    <p class="subtitle">Your heart's Islamic companion · قلب</p>
+    <p class="tagline">Authentic Quran · Hadith · Duas · Adhkar — tailored to your heart</p>
+  </header>
+
+  <!-- DAILY AYAH -->
+  <section class="daily-ayah-box" aria-label="Daily Ayah">
+    <div class="daily-label">✦ Today's Ayah</div>
+    <div class="daily-arabic" id="dailyArabic"></div>
+    <div class="daily-translation" id="dailyTranslation"></div>
+    <div class="daily-source" id="dailySource"></div>
+  </section>
+
+  <!-- JAR -->
+  <div class="jar-visual">
+    <div class="jar" onclick="shakeJar()" title="Tap the jar">
+      <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="jg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(201,168,76,0.15)"/>
+            <stop offset="50%" style="stop-color:rgba(201,168,76,0.3)"/>
+            <stop offset="100%" style="stop-color:rgba(201,168,76,0.1)"/>
+          </linearGradient>
+          <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#7a5c1a"/>
+            <stop offset="50%" style="stop-color:#C9A84C"/>
+            <stop offset="100%" style="stop-color:#7a5c1a"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="10" width="60" height="16" rx="4" fill="url(#lg)" opacity="0.95"/>
+        <rect x="26" y="22" width="68" height="6" rx="2" fill="url(#lg)" opacity="0.7"/>
+        <path d="M20 32 Q15 50 15 80 Q15 125 60 128 Q105 125 105 80 Q105 50 100 32 Z" fill="url(#jg)" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+        <path d="M30 40 Q28 65 29 95" stroke="rgba(255,255,255,0.12)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="60" y="85" text-anchor="middle" font-family="Amiri" font-size="20" fill="rgba(201,168,76,0.7)">دعاء</text>
+        <text x="35" y="55" font-size="10" fill="rgba(201,168,76,0.5)">✦</text>
+        <text x="82" y="55" font-size="10" fill="rgba(201,168,76,0.5)">✦</text>
+        <text x="57" y="115" font-size="8" fill="rgba(201,168,76,0.35)">✦</text>
+      </svg>
+      <p class="jar-hint">tap to shake</p>
+    </div>
+  </div>
+
+  <!-- MOOD SECTION -->
+  <section aria-labelledby="mood-heading">
+    <h2 class="section-label" id="mood-heading">How is your heart today?</h2>
+    <div class="mood-grid">
+
+      <button class="mood-btn" onclick="selectMood('sad')" data-mood="sad">
+        <span class="mood-emoji">😔</span><span class="mood-name">Sad & Heavy</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('anxious')" data-mood="anxious">
+        <span class="mood-emoji">😰</span><span class="mood-name">Anxious & Worried</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('lost')" data-mood="lost">
+        <span class="mood-emoji">🌫️</span><span class="mood-name">Lost & Confused</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('grateful')" data-mood="grateful">
+        <span class="mood-emoji">🤲</span><span class="mood-name">Grateful & Blessed</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('lonely')" data-mood="lonely">
+        <span class="mood-emoji">🌙</span><span class="mood-name">Lonely & Distant</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('angry')" data-mood="angry">
+        <span class="mood-emoji">🌊</span><span class="mood-name">Angry & Frustrated</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('hopeless')" data-mood="hopeless">
+        <span class="mood-emoji">🕯️</span><span class="mood-name">Hopeless & Tired</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('guilty')" data-mood="guilty">
+        <span class="mood-emoji">🌿</span><span class="mood-name">Guilty & Seeking Forgiveness</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('happy')" data-mood="happy">
+        <span class="mood-emoji">☀️</span><span class="mood-name">Happy & Content</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('grief')" data-mood="grief">
+        <span class="mood-emoji">🫀</span><span class="mood-name">Grieving a Loss</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('sick')" data-mood="sick">
+        <span class="mood-emoji">🌡️</span><span class="mood-name">Sick & In Pain</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('stressed')" data-mood="stressed">
+        <span class="mood-emoji">⚡</span><span class="mood-name">Overwhelmed & Stressed</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('imaan')" data-mood="imaan">
+        <span class="mood-emoji">📿</span><span class="mood-name">Low Imaan & Spiritually Empty</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('heartbreak')" data-mood="heartbreak">
+        <span class="mood-emoji">💔</span><span class="mood-name">Heartbroken</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('fearful')" data-mood="fearful">
+        <span class="mood-emoji">🌑</span><span class="mood-name">Fearful & Scared</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('jealous')" data-mood="jealous">
+        <span class="mood-emoji">🍂</span><span class="mood-name">Envious & Comparing</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('seeking')" data-mood="seeking">
+        <span class="mood-emoji">🔍</span><span class="mood-name">Seeking Guidance & Purpose</span>
+      </button>
+      <button class="mood-btn" onclick="selectMood('struggling')" data-mood="struggling">
+        <span class="mood-emoji">⛰️</span><span class="mood-name">Struggling Financially</span>
+      </button>
+
+    </div>
+  </section>
+
+  <button class="reveal-btn" id="revealBtn" onclick="goToDuaPage()" disabled>
+    ✦ Open the Jar ✦
+  </button>
+
+  <!-- ABOUT -->
+  <article class="about-section" id="about">
+    <h2>What is Qalb?</h2>
+    <p>Qalb (قلب) means <em>heart</em> in Arabic. This free Islamic dua jar is inspired by the physical jars of rolled-up duas that many Muslims keep at home — a gift of comfort you can reach into whenever your heart needs it. We've made it digital, free, and always available.</p>
+    <h3>What you'll find here</h3>
+    <p>Every time you open the jar, you receive an authentic <strong>Quran verse</strong>, a <strong>Hadith</strong> from the six major collections, a <strong>Dua with transliteration</strong>, <strong>Allah's name</strong> that speaks to your situation, and <strong>adhkar</strong> to carry through your day.</p>
+    <div class="about-cards">
+      <a href="dhikr.html" class="about-card">
+        <span>📿</span>
+        <strong>Dhikr Counter</strong>
+        <p>Digital tasbih for your daily remembrance</p>
+      </a>
+      <a href="names.html" class="about-card">
+        <span>✦</span>
+        <strong>99 Names</strong>
+        <p>Explore the beautiful names of Allah</p>
+      </a>
+      <a href="share.html" class="about-card">
+        <span>💌</span>
+        <strong>Share Your Heart</strong>
+        <p>Write anonymously — someone is listening</p>
+      </a>
+    </div>
+    <div class="share-row">
+      <button class="share-btn" onclick="shareApp()">Share Qalb with someone who needs it ✦</button>
+    </div>
+  </article>
+
+</main>
+
+<footer class="footer">
+  <div class="gold-line"></div>
+  <p class="footer-dua">اللَّهُمَّ اجْعَلْ هَذَا الْعَمَلَ خَالِصًا لِوَجْهِكَ الْكَرِيمِ</p>
+  <p class="footer-sub">O Allah, make this work sincerely for Your noble face.</p>
+  <nav class="footer-links">
+    <a href="#about">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="share.html">Contact</a>
+  </nav>
+  <p class="footer-copy">Qalb · Free Islamic Dua Jar · All content sourced from Quran & Authentic Hadith</p>
+</footer>
+
+<script src="content.js"></script>
+<script src="shared.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>99 Names of Allah — Asmaul Husna | Qalb</title>
+  <meta name="description" content="Explore the 99 beautiful names of Allah (Asmaul Husna) with meanings and transliterations. Learn the names of Allah and connect with Him through His attributes." />
+  <meta name="keywords" content="99 names of Allah, asmaul husna, names of Allah, Allah names meanings, islamic names of God, asma ul husna" />
+  <link rel="canonical" href="https://qalb-app.github.io/qalb/names.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="names.css" />
+</head>
+<body>
+<div class="geo-bg"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">قلب <span>Qalb</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="dhikr.html">Dhikr</a>
+    <a href="names.html" class="active">99 Names</a>
+    <a href="share.html">Share Your Heart</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleNav()">🏠 Home</a>
+  <a href="dhikr.html" onclick="toggleNav()">📿 Dhikr Counter</a>
+  <a href="names.html" onclick="toggleNav()">✦ 99 Names of Allah</a>
+  <a href="share.html" onclick="toggleNav()">💌 Share Your Heart</a>
+</div>
+
+<main class="container">
+
+  <div class="page-title">
+    <div class="bismillah">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ لَهُ الْأَسْمَاءُ الْحُسْنَىٰ</div>
+    <div class="gold-line"></div>
+    <h1>✦ Asma<em>ul Husna</em></h1>
+    <p>The 99 Beautiful Names of Allah</p>
+  </div>
+
+  <div class="hadith-banner">
+    The Prophet ﷺ said: <em>"Allah has ninety-nine names. Whoever preserves them will enter Paradise."</em>
+    <span>Sahih al-Bukhari 2736, Sahih Muslim 2677</span>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-row">
+    <input type="text" id="nameSearch" placeholder="Search by name or meaning..." class="search-input" oninput="filterNames()" />
+  </div>
+
+  <!-- NAMES GRID -->
+  <div class="names-grid" id="namesGrid"></div>
+
+  <!-- NAME MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()" id="nameModal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-number" id="modalNumber"></div>
+      <div class="modal-arabic" id="modalArabic"></div>
+      <div class="modal-latin" id="modalLatin"></div>
+      <div class="modal-meaning" id="modalMeaning"></div>
+      <div class="modal-detail" id="modalDetail"></div>
+      <button class="ghost-btn" style="margin-top:18px" onclick="addToDhikr()">📿 Count this name in Dhikr</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="gold-line"></div>
+  <p class="footer-dua">وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَىٰ فَادْعُوهُ بِهَا</p>
+  <p class="footer-sub">And to Allah belong the best names, so invoke Him by them. (7:180)</p>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="share.html">Contact</a>
+  </nav>
+  <p class="footer-copy">Qalb · Free Islamic Dua Jar</p>
+</footer>
+
+<script src="shared.js"></script>
+<script src="names.js"></script>
+</body>
+</html>

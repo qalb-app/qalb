@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qalb-app.github.io/qalb/sitemap.xml

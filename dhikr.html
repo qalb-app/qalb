@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhikr Counter — Qalb Islamic Dua Jar</title>
+  <meta name="description" content="Free digital tasbih and dhikr counter. Count SubhanAllah, Alhamdulillah, Allahu Akbar and more. Track your daily remembrance of Allah." />
+  <meta name="keywords" content="dhikr counter, tasbih counter, subhanallah counter, islamic dhikr, online tasbih, free dhikr app" />
+  <link rel="canonical" href="https://qalb-app.github.io/qalb/dhikr.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="dhikr.css" />
+</head>
+<body>
+<div class="geo-bg"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">قلب <span>Qalb</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="dhikr.html" class="active">Dhikr</a>
+    <a href="names.html">99 Names</a>
+    <a href="share.html">Share Your Heart</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleNav()">🏠 Home</a>
+  <a href="dhikr.html" onclick="toggleNav()">📿 Dhikr Counter</a>
+  <a href="names.html" onclick="toggleNav()">✦ 99 Names of Allah</a>
+  <a href="share.html" onclick="toggleNav()">💌 Share Your Heart</a>
+</div>
+
+<main class="container">
+
+  <div class="page-title">
+    <div class="bismillah">بِسْمِ اللَّهِ</div>
+    <div class="gold-line"></div>
+    <h1>📿 D<em>hikr</em> Counter</h1>
+    <p>Digital tasbih for your daily remembrance of Allah</p>
+  </div>
+
+  <!-- DHIKR PICKER -->
+  <div class="dhikr-picker">
+    <h2 class="section-label">Choose your dhikr</h2>
+    <div class="dhikr-options" id="dhikrOptions"></div>
+    <div class="custom-row">
+      <input type="text" id="customDhikr" placeholder="Or type your own dhikr..." class="custom-input" />
+      <button class="ghost-btn" onclick="setCustomDhikr()">Set</button>
+    </div>
+  </div>
+
+  <!-- COUNTER -->
+  <div class="counter-box">
+    <div class="current-dhikr-ar" id="currentAr">سُبْحَانَ اللَّهِ</div>
+    <div class="current-dhikr-en" id="currentEn">SubhanAllah</div>
+    <div class="target-label" id="targetLabel">Target: 33×</div>
+
+    <div class="count-display" id="countDisplay">0</div>
+
+    <div class="progress-ring-wrap">
+      <svg class="progress-ring" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+        <circle cx="60" cy="60" r="52" class="ring-fill" id="ringFill"
+                stroke-dasharray="326.7"
+                stroke-dashoffset="326.7"/>
+      </svg>
+    </div>
+
+    <button class="tap-btn" id="tapBtn" onclick="tap()" aria-label="Count dhikr">
+      <span>tap</span>
+    </button>
+
+    <div class="counter-actions">
+      <button class="ghost-btn" onclick="resetCount()">Reset</button>
+      <button class="ghost-btn" onclick="changeTarget()">Change target</button>
+    </div>
+
+    <div class="session-stats">
+      <div class="stat"><span id="totalToday">0</span><label>today</label></div>
+      <div class="stat"><span id="totalSession">0</span><label>this session</label></div>
+      <div class="stat"><span id="completions">0</span><label>completions</label></div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED DHIKR -->
+  <section class="recommended">
+    <h2 class="section-label">✦ Recommended After Salah</h2>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <div class="rec-arabic">سُبْحَانَ اللَّهِ</div>
+        <div class="rec-latin">SubhanAllah</div>
+        <div class="rec-count">33×</div>
+        <div class="rec-meaning">Glory be to Allah</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-arabic">الْحَمْدُ لِلَّهِ</div>
+        <div class="rec-latin">Alhamdulillah</div>
+        <div class="rec-count">33×</div>
+        <div class="rec-meaning">All praise to Allah</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-arabic">اللَّهُ أَكْبَرُ</div>
+        <div class="rec-latin">Allahu Akbar</div>
+        <div class="rec-count">33×</div>
+        <div class="rec-meaning">Allah is the Greatest</div>
+      </div>
+    </div>
+    <div class="hadith-note">
+      The Prophet ﷺ said: <em>"Whoever says SubhanAllah 33 times, Alhamdulillah 33 times, and Allahu Akbar 33 times after every prayer — that is 99. Then says: La ilaha illAllahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa huwa ala kulli shay'in qadir — his sins are forgiven even if they are like the foam of the sea."</em>
+      <span class="source-note">Sahih Muslim 597</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="gold-line"></div>
+  <p class="footer-dua">وَاذْكُرُوا اللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ</p>
+  <p class="footer-sub">And remember Allah often that you may succeed. (8:45)</p>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="share.html">Contact</a>
+  </nav>
+  <p class="footer-copy">Qalb · Free Islamic Dua Jar</p>
+</footer>
+
+<script src="shared.js"></script>
+<script src="dhikr.js"></script>
+</body>
+</html>

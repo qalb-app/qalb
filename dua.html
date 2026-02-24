@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Dua — Qalb Islamic Dua Jar</title>
+  <meta name="description" content="Quran verse, authentic Hadith, Dua, Allah's Name and Adhkar for your mood — from Qalb Islamic Dua Jar." />
+  <link rel="canonical" href="https://qalb-app.github.io/qalb/dua.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="dua.css" />
+</head>
+<body>
+<div class="geo-bg"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">قلب <span>Qalb</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="dhikr.html">Dhikr</a>
+    <a href="names.html">99 Names</a>
+    <a href="share.html">Share Your Heart</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleNav()">🏠 Home</a>
+  <a href="dhikr.html" onclick="toggleNav()">📿 Dhikr Counter</a>
+  <a href="names.html" onclick="toggleNav()">✦ 99 Names of Allah</a>
+  <a href="share.html" onclick="toggleNav()">💌 Share Your Heart</a>
+</div>
+
+<main class="container">
+
+  <!-- MOOD HEADER -->
+  <div class="dua-header" id="duaHeader">
+    <div class="back-row">
+      <a href="index.html" class="back-link">← Choose another mood</a>
+      <button class="ghost-btn" onclick="drawAnother()">Draw another ✦</button>
+    </div>
+    <div class="mood-display" id="moodDisplay"></div>
+  </div>
+
+  <!-- CONTENT OUTPUT -->
+  <div id="contentArea" aria-live="polite"></div>
+
+  <!-- ADHKAR SECTION -->
+  <section class="adhkar-section" id="adhkarSection" style="display:none">
+    <h2 class="section-label">✦ Adhkar for Your Heart</h2>
+    <div id="adhkarList"></div>
+    <a href="dhikr.html" class="dhikr-link">Open Dhikr Counter →</a>
+  </section>
+
+  <!-- NEXT ACTIONS -->
+  <div class="action-row" id="actionRow" style="display:none">
+    <button class="next-btn" onclick="drawAnother()">✦ Draw another from the jar ✦</button>
+    <div class="secondary-actions">
+      <a href="index.html" class="ghost-btn">← Change mood</a>
+      <button class="ghost-btn" onclick="shareContent()">Share this ✦</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="gold-line"></div>
+  <p class="footer-dua">يَا رَبِّ اشْفِ قُلُوبَنَا</p>
+  <p class="footer-sub">O Lord, heal our hearts.</p>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="share.html">Contact</a>
+  </nav>
+  <p class="footer-copy">Qalb · Free Islamic Dua Jar · All content sourced from Quran & Authentic Hadith</p>
+</footer>
+
+<script src="content.js"></script>
+<script src="shared.js"></script>
+<script src="dua.js"></script>
+</body>
+</html>

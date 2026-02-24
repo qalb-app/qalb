@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Heart — Qalb Islamic Dua Jar</title>
+  <meta name="description" content="Share what is on your heart anonymously. Someone is listening. A safe space for Muslims to express their feelings and receive duas." />
+  <link rel="canonical" href="https://qalb-app.github.io/qalb/share.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="share.css" />
+</head>
+<body>
+<div class="geo-bg"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">قلب <span>Qalb</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="dhikr.html">Dhikr</a>
+    <a href="names.html">99 Names</a>
+    <a href="share.html" class="active">Share Your Heart</a>
+  </div>
+  <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleNav()">🏠 Home</a>
+  <a href="dhikr.html" onclick="toggleNav()">📿 Dhikr Counter</a>
+  <a href="names.html" onclick="toggleNav()">✦ 99 Names of Allah</a>
+  <a href="share.html" onclick="toggleNav()">💌 Share Your Heart</a>
+</div>
+
+<main class="container">
+
+  <div class="page-title">
+    <div class="bismillah">وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ</div>
+    <div class="gold-line"></div>
+    <h1>Share Your <em>Heart</em></h1>
+    <p>He is with you wherever you are — 57:4</p>
+  </div>
+
+  <div class="intro-card">
+    <p>Sometimes the heart needs to be heard. Write whatever is on your mind — your struggles, your pain, your gratitude, your questions. This goes anonymously to the person behind Qalb, who will make dua for you personally. <strong>You are not alone.</strong></p>
+    <p style="margin-top:12px;font-size:14px;color:rgba(245,237,216,.45);">Your message is completely anonymous. No account needed. No email tracked.</p>
+  </div>
+
+  <!-- FORM -->
+  <form class="heart-form" id="heartForm" onsubmit="submitMessage(event)">
+
+    <div class="form-field">
+      <label class="form-label">What's on your heart?</label>
+      <textarea
+        id="messageText"
+        class="heart-textarea"
+        placeholder="Write freely... this is a safe space. You can share your pain, your hopes, what you are struggling with, or simply ask for dua..."
+        maxlength="2000"
+        oninput="updateCharCount()"
+        required
+      ></textarea>
+      <div class="char-count"><span id="charCount">0</span>/2000</div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">Your mood (optional)</label>
+      <select class="heart-select" id="moodSelect">
+        <option value="">— Select if you'd like —</option>
+        <option value="sad">Sad & Heavy</option>
+        <option value="anxious">Anxious & Worried</option>
+        <option value="lost">Lost & Confused</option>
+        <option value="grateful">Grateful & Blessed</option>
+        <option value="lonely">Lonely & Distant</option>
+        <option value="angry">Angry & Frustrated</option>
+        <option value="hopeless">Hopeless & Tired</option>
+        <option value="guilty">Guilty & Seeking Forgiveness</option>
+        <option value="grief">Grieving a Loss</option>
+        <option value="sick">Sick & In Pain</option>
+        <option value="stressed">Overwhelmed & Stressed</option>
+        <option value="heartbreak">Heartbroken</option>
+        <option value="imaan">Low Imaan</option>
+        <option value="seeking">Seeking Guidance</option>
+        <option value="struggling">Struggling Financially</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">Your first name only (optional)</label>
+      <input
+        type="text"
+        id="firstName"
+        class="heart-input"
+        placeholder="e.g. Fatima, Omar, Sarah... (so we can make dua for you by name)"
+        maxlength="30"
+      />
+    </div>
+
+    <button type="submit" class="reveal-btn" id="submitBtn">
+      💌 Send to Qalb
+    </button>
+
+  </form>
+
+  <!-- SUCCESS STATE -->
+  <div class="success-state" id="successState" style="display:none">
+    <div class="success-icon">🤲</div>
+    <h2>Received with love</h2>
+    <p>Your message has been sent. You will be remembered in dua — personally, with your name, by a fellow Muslim who cares.</p>
+    <div class="success-ayah">
+      <div class="success-arabic">إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</div>
+      <div class="success-trans">Indeed, Allah is with the patient. (2:153)</div>
+    </div>
+    <div class="success-actions">
+      <a href="index.html" class="reveal-btn" style="text-decoration:none;display:inline-block;width:auto;padding:14px 32px;">Open the Jar for yourself</a>
+      <button class="ghost-btn" onclick="resetForm()">Send another message</button>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <h2 class="section-label">✦ How this works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <span class="step-num">١</span>
+        <p>You write what's on your heart — completely anonymously</p>
+      </div>
+      <div class="step">
+        <span class="step-num">٢</span>
+        <p>Your message arrives privately to the person behind Qalb</p>
+      </div>
+      <div class="step">
+        <span class="step-num">٣</span>
+        <p>They make personal dua for you — by name if you shared it</p>
+      </div>
+    </div>
+    <p class="privacy-note">Messages are read only by the Qalb team. Nothing is published or shared. This is a trust.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="gold-line"></div>
+  <p class="footer-dua">اللَّهُمَّ اشْفِ كُلَّ مَكْسُورِ الْقَلْبِ</p>
+  <p class="footer-sub">O Allah, heal every broken heart.</p>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <p class="footer-copy">Qalb · Free Islamic Dua Jar</p>
+</footer>
+
+<script src="shared.js"></script>
+<script src="share.js"></script>
+</body>
+</html>
